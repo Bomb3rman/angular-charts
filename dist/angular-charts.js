@@ -1227,3 +1227,17 @@ angular.module('angularCharts').directive('acChart', function($templateCache, $c
     }
   };
 });
+
+
+angular.module('angularChartsTemplates', ['angularChartsTemplate_left', 'angularChartsTemplate_right']);
+
+angular.module("angularChartsTemplate_left", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("angularChartsTemplate_left",
+    "<div class=\"angular-charts-template\"><div class=\"ac-title\">{{acConfig.title}}</div><div class=\"ac-legend\" ng-show=\"{{acConfig.legend.display}}\"><table><tr ng-repeat=\"l in legends\"><td><div class=\"ac-legend-box\" ng-attr-style=\"background:{{l.color}};\"></div></td><td ng-bind-html=\"l.title\"></td></tr></table></div><div class=\"ac-chart\"></div></div>");
+}]);
+
+angular.module("angularChartsTemplate_right", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("angularChartsTemplate_right",
+    "<div class=\"angular-charts-template\"><div class=\"ac-title\">{{acConfig.title}}</div><div class=\"ac-chart\"></div><div class=\"ac-legend\" ng-show=\"{{acConfig.legend.display}}\"><table><tr ng-repeat=\"l in legends | limitTo:yMaxData\"><td><div class=\"ac-legend-box\" ng-attr-style=\"background:{{l.color}};\"></div></td><td ng-bind-html=\"l.title\"></td></tr></table></div></div>");
+}]);
+

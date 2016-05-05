@@ -1,6 +1,6 @@
 {
   "name": "angular-charts",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "authors": [
     "chinmaymk"
   ],
@@ -23,7 +23,7 @@
     "./dist/angular-charts.js"
   ],
   "dependencies": {
-    "d3": "~3.3.10",
+    "d3": "~3",
     "angular": "latest"
   },
   "devDependencies": {
